@@ -1,13 +1,14 @@
+const exec = require("child_process").exec;
+
 function start() {
   console.log("Request handler 'start' was called.");
+var content = "empty";
 
-  function sleep(milliSeconds) {
-    var startTime = new Date().getTime();
-    while(startTime < (startTime + milliSeconds));
-  }
+exec("ls -lah", (error, stdout, stderr) => {
+  content = stdout;
+});
 
-  sleep(10000);
-  return "Hello Start";
+  return content;
 }
 
 function upload(){
