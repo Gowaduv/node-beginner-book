@@ -3,10 +3,11 @@ const exec = require("child_process").exec;
 function start(response) {
   console.log("Request handler for start was called.");
 
-  var body = '<html>' +
+  var body = '<!DOCTYPE = html>' +
+    '<html>' +
     '<head>' +
     '<meta http-equiv="Content-Type" content="text/html; ' +
-    'charset=UTF-8" />' +
+    'charset=utf-8" />' +
     '</head>' +
     '<body>' +
     '<form action="/upload" method="post">' +
@@ -17,7 +18,7 @@ function start(response) {
     '</html>';
 
   response.writeHead(200, {
-    "Content-Type": "text/plain"
+    "Content-Type": "text/html"
   });
   response.write(body);
   response.end();
